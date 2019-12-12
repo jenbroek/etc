@@ -1,0 +1,23 @@
+#!/bin/sh -e
+
+while test -z "$THEME"; do
+    printf 'Specify theme: '
+    read -r THEME
+done
+
+DIR=$(readlink -f "$0")
+DIR=${DIR%/*}
+
+. $DIR/share/.local/share/tpl/$THEME
+. $DIR/config/.config/wm/rc
+
+while read -r g d; do
+    for p in $DIR/$g; do
+        if test ! -d "$p"; then
+            f=${d:-${DIR%/*}}/${p#$DIR/*/}
+            mkdir -p "${f%/*}"
+            tpl "$p" > "$f"
+            chmod $(stat -c %a "$p") "$f"
+        fi
+    done
+done < $DIR/.files

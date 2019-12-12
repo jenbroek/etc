@@ -1,0 +1,28 @@
+export BAR_HEIGHT=30
+export BAR_TOP=true
+
+export SANS='Noto Sans,Arimo'
+export SERIF='Noto Serif,Tinos'
+export MONO=Hack
+export BITMAP=Ttyp0,-*-ttyp0-*,-*-siji-*
+
+export FG=#ffffff
+export BG=#232e2f
+
+export CLR0=#324344
+export CLR1=#a54242
+export CLR2=#8c9440
+export CLR3=#de935f
+export CLR4=#5f819d
+export CLR5=#85678f
+export CLR6=#5e8d87
+export CLR7=#d1d1d1
+
+export CLR8=#405557
+export CLR9=#cc6666
+export CLR10=#b5bd68
+export CLR11=#f0c674
+export CLR12=#81a2be
+export CLR13=#b294bb
+export CLR14=#8abeb7
+export CLR15=#eeeeee

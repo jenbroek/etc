@@ -1,0 +1,49 @@
+alt + shift + {r,e}
+    {apply-theme,pkill wm}
+alt + {_,shift} + {1-4}
+    group t {_,"$(pfw)"} {1-4}
+alt + {_,shift} + Tab
+    focus {n,p}
+
+alt + q
+    killw "$(pfw)"
+alt + i
+    mapw -u "$(pfw)"
+alt + {_,shift} + f
+    maximize {m,f} "$(pfw)"
+alt + d
+    for w in "$(lsw; lsw -u)"; do mapw -t $w; done
+
+alt + r : {_,shift} + {Up,Left,Right,Down}
+    wrs {0 -40,0 -10,-40 0,-10 0,40 0,10 0,0 40,0 10} "$(pfw)"
+alt + m : {_,shift} + {Up,Left,Right,Down}
+    wmv {0 -40,0 -10,-40 0,-10 0,40 0,10 0,0 40,0 10} "$(pfw)"
+
+alt + c
+    tile c "$(pfw)"
+alt + {_,shift} + {Up,Left,Right,Down}
+    tile {t,tl,l,bl,r,tr,b,br} "$(pfw)"
+
+{_,shift} + XF86AudioPrev
+    mpc {prev,seek -2%}
+{_,shift} + XF86AudioPlay
+    mpc {toggle,stop}
+{_,shift} + XF86AudioNext
+    mpc {next,seek +2%}
+XF86Audio{RaiseVolume,LowerVolume,Mute}
+    vol {up,down,mute}
+
+alt + Return
+    st
+alt + o
+    IFS=:; stest -flx $PATH | dmenu -t | sh
+alt + l
+    w=$(for w in $(lsw -u); do echo "$w: $(wname $w)"; done | dmenu -p window:); \
+    focus $\{w%%:*\}
+alt + s
+    slock
+
+~button1
+    focus u
+alt + @button{1,3}
+    focus u; {xmmv,xmrs}

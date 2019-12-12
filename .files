@@ -1,0 +1,5 @@
+config/.config/*/*
+config/.config/*/*/*
+home/.[!.]*
+share/.local/share/*/*
+src/src/*/*/*

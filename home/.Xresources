@@ -1,0 +1,32 @@
+Xft.dpi: 141
+Xft.antialias: true
+Xft.hinting: true
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
+
+{{
+cat << EOF
+*.foreground: $FG
+*.background: $BG
+*.cursorColor: $FG
+
+*.color0: $CLR0
+*.color8: $CLR8
+*.color1: $CLR1
+*.color9: $CLR9
+*.color2: $CLR2
+*.color10: $CLR10
+*.color3: $CLR3
+*.color11: $CLR11
+*.color4: $CLR4
+*.color12: $CLR12
+*.color5: $CLR5
+*.color13: $CLR13
+*.color6: $CLR6
+*.color14: $CLR14
+*.color7: $CLR7
+*.color15: $CLR15
+EOF
+}}
