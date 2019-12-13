@@ -3,7 +3,7 @@
 export THEME=default
 
 . $HOME/.local/share/tpl/$THEME
-. $HOME/.config/wm/rc
+. $HOME/.config/wm/wm.conf
 
 setxkbmap -option compose:ralt
 xsetroot -cursor_name left_ptr

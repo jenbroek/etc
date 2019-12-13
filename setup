@@ -9,7 +9,7 @@ DIR=$(readlink -f "$0")
 DIR=${DIR%/*}
 
 . $DIR/share/.local/share/tpl/$THEME
-. $DIR/config/.config/wm/rc
+. $DIR/config/.config/wm/wm.conf
 
 while read -r g d; do
     for p in $DIR/$g; do
