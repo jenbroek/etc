@@ -42,3 +42,5 @@ alias tree='tree -F --dirsfirst -I .git'
 
 export PS1='$(_PS1)'
 export EDITOR=$(command -v vi)
+
+printf '\033[?1h\033='
