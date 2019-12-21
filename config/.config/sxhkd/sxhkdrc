@@ -1,7 +1,7 @@
 alt + shift + {r,e}
     {apply-theme,pkill wm}
-alt + {_,shift} + {1-4}
-    group t {_,"$(pfw)"} {1-4}
+alt + {_,shift} + {1-{{ printf %s $WM_WORKSPACES }}}
+    workspace {g,s "$(pfw)"} {1-{{ printf %s $WM_WORKSPACES }}}
 alt + {_,shift} + Tab
     focus {n,p}
 
