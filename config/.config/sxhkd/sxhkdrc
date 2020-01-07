@@ -31,7 +31,7 @@ alt + {_,shift} + {Up,Left,Right,Down}
 {_,shift} + XF86AudioNext
     mpc {next,seek +2%}
 XF86Audio{RaiseVolume,LowerVolume,Mute}
-    vol {up,down,mute}
+    vol {u,d,t}
 
 alt + Return
     st
