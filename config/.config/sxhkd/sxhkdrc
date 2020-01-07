@@ -10,7 +10,7 @@ alt + q
 alt + i
     mapw -u "$(pfw)"
 alt + {_,shift} + f
-    maximize {m,f} "$(pfw)"
+    maximize {_,-f} "$(pfw)"
 alt + d
     for w in "$(lsw; lsw -u)"; do mapw -t $w; done
 
@@ -20,9 +20,9 @@ alt + m : {_,shift} + {Up,Left,Right,Down}
     wmv {0 -40,0 -10,-40 0,-10 0,40 0,10 0,0 40,0 10} "$(pfw)"
 
 alt + c
-    tile c "$(pfw)"
+    tile -c "$(pfw)"
 alt + {_,shift} + {Up,Left,Right,Down}
-    tile {t,tl,l,bl,r,tr,b,br} "$(pfw)"
+    tile -{t,T,l,L,r,R,b,B} "$(pfw)"
 
 {_,shift} + XF86AudioPrev
     mpc {prev,seek -2%}
