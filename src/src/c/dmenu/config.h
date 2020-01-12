@@ -11,7 +11,7 @@ static const char *colors[SchemeLast][2] = {
 cat << EOF
 	/* fg bg */
 	[SchemeNorm] = { "$FG", "$BG" },
-	[SchemeSel]  = { "$FG", "$CLR6" },
+	[SchemeSel]  = { "$FG", "$CLR0" },
 	[SchemeOut]  = { "#000000", "#00ffff" },
 EOF
 }}
