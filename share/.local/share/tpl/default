@@ -1,4 +1,4 @@
-export BAR_HEIGHT=30
+export BAR_HEIGHT=40
 export BAR_TOP=true
 
 export SANS='Noto Sans,Arimo'
