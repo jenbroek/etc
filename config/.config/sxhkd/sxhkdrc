@@ -38,7 +38,7 @@ alt + Return
 alt + o
     IFS=:; stest -flx $PATH | dmenu -t | sh
 alt + l
-    w=$(for w in $(lsw -u); do echo "$w: $(wname $w)"; done | dmenu -p window:); \
+    w=$(for w in $(workspace w); do wattr m $w || echo "$w: $(wname $w)"; done | dmenu -p window:); \
     focus $\{w%%:*\}
 alt + s
     slock
