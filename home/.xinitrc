@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-export THEME=default
+export THEME={{ printf %s $THEME }}
 
 . $HOME/.local/share/tpl/$THEME
 . $HOME/.config/wm/wm.conf

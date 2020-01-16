@@ -5,6 +5,8 @@ while test -z "$THEME"; do
     read -r THEME
 done
 
+export THEME
+
 DIR=$(readlink -f "$0")
 DIR=${DIR%/*}
 
