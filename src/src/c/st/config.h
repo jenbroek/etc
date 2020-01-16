@@ -1,6 +1,6 @@
 static unsigned int cols = 110;
 static unsigned int rows = 28;
-static int borderpx = 10;
+static int borderpx = 15;
 
 static char *font = "{{ substr "$BITMAP" , 0 }}";
 static float cwscale = 1.0;
