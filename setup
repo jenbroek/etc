@@ -7,19 +7,19 @@ done
 
 export THEME
 
-DIR=$(readlink -f "$0")
-DIR=${DIR%/*}
+dir=$(readlink -f "$0")
+dir=${dir%/*}
 
-. $DIR/share/.local/share/tpl/$THEME
-. $DIR/config/.config/wm/wm.conf
+. $dir/share/.local/share/tpl/$THEME
+. $dir/config/.config/wm/wm.conf
 
 while read -r g d; do
-    for p in $DIR/$g; do
+    for p in $dir/$g; do
         if test ! -d "$p"; then
-            f=${d:-${DIR%/*}}/${p#$DIR/*/}
+            f=${d:-${dir%/*}}/${p#$dir/*/}
             mkdir -p "${f%/*}"
             tpl "$p" > "$f"
             chmod $(stat -c %a "$p") "$f"
         fi
     done
-done < $DIR/.files
+done < $dir/.files
