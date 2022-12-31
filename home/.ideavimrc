@@ -1,0 +1,53 @@
+set ideajoin
+set surround
+set commentary
+set matchit.vim
+
+set scrolloff=5
+set sidescroll=5
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set nrformats-=octal
+
+let g:mapleader = ' '
+
+command! StripWhitespace %s/\s\+$//e | nohlsearch
+
+nnoremap <S-Left>  g^
+nnoremap <S-Right> g$
+nnoremap <Up>      gk
+nnoremap <Down>    gj
+nnoremap <S-Up>    k
+nnoremap <S-Down>  j
+
+xnoremap <S-Left>  g^
+xnoremap <S-Right> g$
+xnoremap <Up>      gk
+xnoremap <Down>    gj
+xnoremap <S-Up>    k
+xnoremap <S-Down>  j
+
+vnoremap p pgvy
+vnoremap < <gv
+vnoremap > >gv
+
+nmap [g <Action>(GotoPreviousError)
+nmap ]g <Action>(GotoNextError)
+nmap gd <Action>(GotoDeclaration)
+nmap gy <Action>(GotoTypeDefinition)
+nmap gi <Action>(GotoImplementation)
+nmap gr <Action>(FindUsagesInFile)
+
+nmap <Leader>rn <Action>(RenameElement)
+nmap <Leader>rf <Action>(RefactoringMenu)
+xmap <Leader>rf <Action>(RefactoringMenu)
+
+nmap <Leader>a <Action>(ShowIntentionActions)
+xmap <Leader>a <Action>(ShowIntentionActions)
+
+nmap <Leader>fm <Action>(ReformatCode)
+xmap <Leader>fm <Action>(ReformatCode)
+
+nmap K <Action>(QuickJavaDoc)
