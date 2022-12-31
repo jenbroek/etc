@@ -1,0 +1,9 @@
+icon_path=/Applications/Alacritty.app/Contents/Resources/alacritty.icns
+icon_url=https://github.com/hmarr/dotfiles/files/8549877/alacritty.icns.gz
+
+if test -f $icon_path; then
+	curl -SsL $icon_url | gunzip > $icon_path
+	touch /Applications/Alacritty.app
+	killall Finder
+	killall Dock
+fi
