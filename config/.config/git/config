@@ -49,3 +49,9 @@
 	sha = stash apply
 	shd = stash drop
 	cn = clean -idx
+{{ range $identity := .git.identities -}}
+{{ range $identity.remotes -}}
+[includeIf "hasconfig:remote.*.url:{{ . }}"]
+	path = config.d/{{ $identity.path }}
+{{ end -}}
+{{ end -}}
