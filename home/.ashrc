@@ -1,48 +1,61 @@
 _PS1() {
-    case $? in
-        0) cwd='\[\033[38;5;8m\]\w\[\033[m\]' ;;
-        *) cwd='\[\033[38;5;1m\]\w\[\033[m\]' ;;
-    esac
+	local e=$? cwd branch stage
 
-    branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
+	case $e in
+		0) cwd='\[\033[38;5;2m\]\w\[\033[m\]' ;;
+		*) cwd='\[\033[38;5;1m\]\w\[\033[m\]' ;;
+	esac
 
-    if test -n "$branch"; then
-        git status --porcelain 2> /dev/null | grep -q '^\w' && stage=1
-        git status --porcelain 2> /dev/null | grep -qv '^\w' && stage=$((stage + 2))
+	branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
 
-        case $stage in
-            1) stage='\[\033[38;5;2m\]*\[\033[m\]' ;;
-            2) stage='\[\033[38;5;1m\]*\[\033[m\]' ;;
-            3) stage='\[\033[38;5;3m\]*\[\033[m\]' ;;
-        esac
-    fi
+	if test -n "$branch"; then
+		git status --porcelain 2> /dev/null | grep -q '^\w' && stage=1
+		git status --porcelain 2> /dev/null | grep -qv '^\w' && stage=$((stage + 2))
 
-    set -o noglob
-    printf '%s ' $cwd $branch $stage →
+		case $stage in
+			1) stage='\[\033[38;5;12m\]*\[\033[m\]' ;;
+			2) stage='\[\033[38;5;13m\]*\[\033[m\]' ;;
+			3) stage='\[\033[38;5;11m\]*\[\033[m\]' ;;
+		esac
+	fi
+
+	set -o noglob
+	printf '%s ' $cwd $branch $stage '
+→'
+	printf '\033]0;%s\007' "${PWD##*/}"
 }
 
 colors() {
-    for i in $(seq 0 15); do
-        printf "\033[38;5;${i}m███\033[m"
-        test $i = 7 || test $i = 15 && echo
-    done
+	for i in $(seq 0 15); do
+		printf "\033[38;5;${i}m███\033[m"
+		test $i = 7 || test $i = 15 && echo
+	done
 }
 
-alias get_ip='curl -Ss https://ident.me'
-alias get_weather='curl -Ss https://wttr.in/?0T'
-alias get_mp3='youtube-dl -xi -o "%(title)s.%(ext)s" --audio-format mp3'
+alias g=git
+
+alias tree='tree -CF --dirsfirst'
+alias grep='grep --color'
+alias diff='diff -u --color'
+alias diffc='diff --color=always'
+alias lessr='less -R'
+alias cat='cat -v'
 
 alias ls='ls -F --color --group-directories-first'
 alias la='ls -A'
 alias ll='ls -hl'
 alias lla='ls -Ahl'
 
-alias grep='grep --color=always'
-alias tree='tree -F --dirsfirst -I .git'
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
 
-export PS1='$(_PS1)'
-export EDITOR=$(command -v vi)
+PS1='$(_PS1)'
+
+export EDITOR=nvim
+export LESSHISTFILE=-
+export GPG_TTY=$(tty)
 
 if pgrep X > /dev/null; then
-    printf '\033[?1h\033='
+	printf '\033[?1h\033='
 fi
