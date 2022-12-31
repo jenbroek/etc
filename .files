@@ -1,6 +1,7 @@
 config/.config/*/*
 config/.config/*/*/*
 config/.config/*/*/*/*
+gnupg/.gnupg/*
 home/.[!.]*
 share/.local/share/*/*
 src/src/*/*/*
