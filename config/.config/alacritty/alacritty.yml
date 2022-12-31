@@ -1,0 +1,58 @@
+window:
+  dimensions:
+    columns: 120
+    lines: 30
+
+  padding:
+    x: 20
+    y: 20
+
+scrolling:
+  history: 100000
+
+font:
+  normal:
+    family: Cascadia Code PL
+    style: SemiBold
+
+  size: 14.0
+
+  offset:
+   y: 2
+
+  glyph_offset:
+    y: 1
+
+draw_bold_text_with_bright_colors: true
+
+colors:
+  primary:
+    background: '0x232324'
+    foreground: '0xe9e5d9'
+
+  normal:
+    black:   '0x404041'
+    red:     '0xd89e7f'
+    green:   '0x869976'
+    yellow:  '0xb19e6b'
+    blue:    '0x8b968c'
+    magenta: '0xd2877b'
+    cyan:    '0x95a7a1'
+    white:   '0xd3d0c5'
+
+  bright:
+    black:   '0x555557'
+    red:     '0xf5c5a5'
+    green:   '0xacc498'
+    yellow:  '0xe8c773'
+    blue:    '0xc1d0c2'
+    magenta: '0xffa496'
+    cyan:    '0xd3ece4'
+    white:   '0xfffbed'
+
+selection:
+  save_to_clipboard: true
+
+key_bindings:
+  - { key: T,      mods: Command, action: CreateNewWindow }
+  - { key: Return, mods: Command, action: ToggleFullscreen }
