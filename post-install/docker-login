@@ -1,0 +1,7 @@
+{{ if and .docker .docker.registries -}}
+{{ range .docker.registries -}}
+docker login -u '{{ .username }}' --password-stdin '{{ .url }}' << 'EOF'
+{{ .password }}
+EOF
+{{ end -}}
+{{ end -}}

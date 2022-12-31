@@ -1,7 +1,17 @@
 #!/bin/sh -e
 
+case $1 in
+	-n)
+		skip_hooks=true
+		shift
+		;;
+	--)
+		shift
+		;;
+esac
+
 if test $# -lt 2; then
-	echo "usage: ${0##*/} TARGET_DIR VALUE_FILE..." >&2
+	echo "usage: ${0##*/} [-n] TARGET_DIR VALUE_FILE..." >&2
 	exit 1
 fi
 
@@ -30,3 +40,13 @@ while read -r g; do
 		fi
 	done
 done < $dir/.files
+
+if test -z "$skip_hooks"; then
+	for p in post-install/*; do
+		if s=$(templa $value_files "$p"); then
+			/bin/sh -e <<- EOF
+				$s
+			EOF
+		fi
+	done
+fi
