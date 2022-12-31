@@ -4,5 +4,6 @@ config/.config/*/*/*/*
 gnupg/.gnupg/*
 gradle/.gradle/*
 home/.[!.]*
+maven/.m2/*
 ssh/.ssh/*
 ssh/.ssh/*/*
