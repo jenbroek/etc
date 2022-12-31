@@ -1,0 +1,11 @@
+patch --no-backup-if-mismatch -N -r /dev/null -p0 << 'EOF' > /dev/null 2>&1
+--- /etc/pam.d/sudo
++++ /etc/pam.d/sudo
+@@ -1,5 +1,6 @@
+ # sudo: auth account password session
+ auth       sufficient     pam_smartcard.so
++auth       sufficient     pam_tid.so
+ auth       required       pam_opendirectory.so
+ account    required       pam_permit.so
+ password   required       pam_deny.so
+EOF
