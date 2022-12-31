@@ -1,17 +1,7 @@
 #!/bin/sh -e
 
-while test -z "$THEME"; do
-    printf 'Specify theme: '
-    read -r THEME
-done
-
-export THEME
-
 dir=$(readlink -f "$0")
 dir=${dir%/*}
-
-. $dir/share/.local/share/tpl/$THEME
-. $dir/config/.config/wm/wm.conf
 
 while read -r g; do
     for p in $dir/$g; do

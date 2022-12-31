@@ -55,7 +55,3 @@ PS1='$(_PS1)'
 export EDITOR=nvim
 export LESSHISTFILE=-
 export GPG_TTY=$(tty)
-
-if pgrep X > /dev/null; then
-	printf '\033[?1h\033='
-fi
