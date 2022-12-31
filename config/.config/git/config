@@ -1,0 +1,48 @@
+[core]
+	fileMode = false
+	autocrlf = false
+[init]
+	defaultBranch = main
+[push]
+	default = current
+	autoSetupRemote = true
+[pull]
+	rebase = true
+[commit]
+	gpgSign = true
+[gpg]
+	program = gpg
+[merge]
+	tool = vimdiff
+[mergetool "vimdiff"]
+	path = nvim
+[alias]
+	cl = clone
+	st = status
+	df = diff
+	dfc = diff --cached
+	dfo = !git diff "origin/$(git rev-parse --abbrev-ref HEAD)"
+	ad = add
+	ada = add -A
+	cm = commit
+	cma = commit --amend
+	tg = tag
+	lg = log
+	lgp = log -p
+	lgo = !git log "origin/$(git rev-parse --abbrev-ref HEAD).."
+	ft = fetch
+	pl = pull
+	pu = push
+	puf = push --force-with-lease --force-if-includes
+	rb = rebase
+	rbi = rebase -i
+	ch = checkout
+	br = branch
+	rs = reset
+	rso = !git reset --hard "origin/$(git rev-parse --abbrev-ref HEAD)"
+	rt = restore
+	sh = stash
+	shu = stash -u
+	shl = stash list
+	sha = stash apply
+	cn = clean -idx
