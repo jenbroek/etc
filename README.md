@@ -2,4 +2,4 @@ etc.
 ====
 
 See also:
-* <https://github.com/jenbroek/tpl>
+* <https://github.com/jenbroek/templa>
