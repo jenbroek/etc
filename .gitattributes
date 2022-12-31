@@ -1,0 +1,2 @@
+ssh/.ssh/config.d/**           filter=git-crypt diff=git-crypt
+.gitattributes                 !filter          !diff
