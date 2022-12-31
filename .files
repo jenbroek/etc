@@ -2,6 +2,7 @@ config/.config/*/*
 config/.config/*/*/*
 config/.config/*/*/*/*
 gnupg/.gnupg/*
+gradle/.gradle/*
 home/.[!.]*
 ssh/.ssh/*
 ssh/.ssh/*/*
