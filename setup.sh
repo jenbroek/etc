@@ -13,10 +13,10 @@ dir=${dir%/*}
 . $dir/share/.local/share/tpl/$THEME
 . $dir/config/.config/wm/wm.conf
 
-while read -r g d; do
+while read -r g; do
     for p in $dir/$g; do
         if test ! -d "$p"; then
-            f=${d:-${dir%/*}}/${p#$dir/*/}
+            f=${dir%/*}/${p#$dir/*/}
             mkdir -p "${f%/*}"
             tpl "$p" > "$f"
             chmod $(stat -c %a "$p") "$f"
