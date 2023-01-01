@@ -36,6 +36,7 @@
 	puf = push --force-with-lease --force-if-includes
 	rb = rebase
 	rbi = rebase -i
+	rbc = rebase --continue
 	ch = checkout
 	br = branch
 	rs = reset
@@ -43,6 +44,8 @@
 	rt = restore
 	sh = stash
 	shu = stash -u
+	shp = stash push
 	shl = stash list
 	sha = stash apply
+	shd = stash drop
 	cn = clean -idx
