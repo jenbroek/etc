@@ -6,3 +6,4 @@ set show-all-if-unmodified on
 
 TAB: menu-complete
 "\e[Z": menu-complete-backward
+"\C-f": forward-search-history
