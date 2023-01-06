@@ -5,9 +5,6 @@ if test $# -lt 2; then
 	exit 1
 fi
 
-dir=$(readlink -f "$0")
-dir=${dir%/*}
-
 target_dir=$1
 shift
 
@@ -16,17 +13,9 @@ for f in "$@"; do
 	value_files="${value_files+$value_files }-f $f"
 done
 
-while read -r g; do
-	if test -z "$g" || test "$g" = '#'; then
-		continue
-	fi
-
-	for p in $dir/$g; do
-		if test ! -d "$p"; then
-			f=$target_dir/${p#$dir/*/}
-			mkdir -p "${f%/*}"
-			templa $value_files "$p" > "$f"
-			chmod $(stat -c %a "$p") "$f"
-		fi
-	done
-done < $dir/.files
+find templates -type f | while read -r p; do
+	f=$target_dir/${p#*/}
+	mkdir -p "${f%/*}"
+	templa $value_files "$p" > "$f"
+	chmod $(stat -c %a "$p") "$f"
+done
