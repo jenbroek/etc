@@ -1,9 +1,0 @@
-icon_url=https://github.com/bouk/alacritty/blob/604686ba061c714f37d1db7002258517f062f0d2/extra/osx/Alacritty.app/Contents/Resources/alacritty.icns?raw=true
-
-icon_file=$(mktemp)
-trap "rm -f $icon_file" INT TERM EXIT
-
-curl -Ss "$icon_url" -o "$icon_file"
-for i in "$(brew --prefix)/Caskroom/alacritty"/*; do
-	cp $icon_file $i/Alacritty.app/Contents/Resources/alacritty.icns
-done
