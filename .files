@@ -1,6 +1,7 @@
 config/.config/*/*
 config/.config/*/*/*
 config/.config/*/*/*/*
+docker/.docker/*
 gnupg/.gnupg/*
 gradle/.gradle/*
 home/.[!.]*
