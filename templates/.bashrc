@@ -2,9 +2,7 @@
 
 . ~/.asdf/plugins/java/set-java-home.bash
 . "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
-for f in "$HOMEBREW_PREFIX/etc/bash_completion.d/"*; do
-	. "$f"
-done
+. "$HOMEBREW_PREFIX/etc/bash_completion.d/git-completion.bash"
 
 __git_complete g __git_main
 
