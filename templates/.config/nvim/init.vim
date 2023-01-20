@@ -12,7 +12,6 @@ let g:mapleader = ' '
 let g:is_posix = 1
 let g:c_syntax_for_h = 1
 
-let g:polyglot_disabled = [ 'autoindent', 'sensible' ]
 let g:undotree_SetFocusWhenToggle = 1
 let g:matchup_matchparen_offscreen = { 'method': 'popup' }
 
