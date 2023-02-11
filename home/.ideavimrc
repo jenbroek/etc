@@ -1,7 +1,9 @@
 set ideajoin
+set ideamarks
+set idearefactormode=visual
 set surround
 set commentary
-set matchit.vim
+set matchit
 
 set scrolloff=5
 set sidescroll=5
@@ -33,21 +35,26 @@ vnoremap p pgvy
 vnoremap < <gv
 vnoremap > >gv
 
-nmap [g <Action>(GotoPreviousError)
-nmap ]g <Action>(GotoNextError)
+nmap g[ <Action>(GotoPreviousError)
+nmap g] <Action>(GotoNextError)
 nmap gd <Action>(GotoDeclaration)
-nmap gy <Action>(GotoTypeDefinition)
+nmap gy <Action>(GotoTypeDeclaration)
 nmap gi <Action>(GotoImplementation)
-nmap gr <Action>(FindUsagesInFile)
+nmap gt <Action>(GotoTest)
+nmap gs <Action>(FileStructurePopup)
+
+nmap <Leader>b <Action>(ToggleLineBreakpoint)
+xmap <Leader>b <Action>(ToggleLineBreakpoint)
+nmap gb <Action>(ViewBreakpoints)
+
+nmap U <Action>(LocalHistory.ShowHistory)
+xmap U <Action>(LocalHistory.ShowSelectionHistory)
 
 nmap <Leader>rn <Action>(RenameElement)
-nmap <Leader>rf <Action>(RefactoringMenu)
-xmap <Leader>rf <Action>(RefactoringMenu)
+nmap <Leader>rf <Action>(Refactorings.QuickListPopupAction)
+xmap <Leader>rf <Action>(Refactorings.QuickListPopupAction)
 
 nmap <Leader>a <Action>(ShowIntentionActions)
 xmap <Leader>a <Action>(ShowIntentionActions)
-
-nmap <Leader>fm <Action>(ReformatCode)
-xmap <Leader>fm <Action>(ReformatCode)
 
 nmap K <Action>(QuickJavaDoc)
