@@ -26,7 +26,10 @@ Plug 'mbbill/undotree'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'andymass/vim-matchup'
 
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug'] }
+Plug 'godlygeek/tabular'
+
+Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 
 call plug#end()
