@@ -7,7 +7,9 @@
 __git_complete g __git_main
 
 _PS1() {
-	local e=$? cwd branch stage
+	local e=$? jobcmd cwd branch stage context
+
+	jobcmd='\[$(test \j -gt 0 && printf "(\j) ")\]'
 
 	case $e in
 		0) cwd='\[\033[38;5;2m\]\w\[\033[m\]' ;;
@@ -27,9 +29,10 @@ _PS1() {
 		esac
 	fi
 
-	local jobcmd='\[$(test \j -gt 0 && printf "(\j) ")\]'
+	context=$(kubectl config current-context 2> /dev/null)
+	test -n "$context" && context="\[\033[38;5;8m\]$context\[\033[m\]"
 
-	PS1=$(set -o noglob; printf '%s ' $jobcmd$cwd $branch $stage $'\n→')
+	PS1=$(set -o noglob; printf '%s ' $jobcmd$cwd $branch $stage $context $'\n→')
 	printf '\033]0;%s\007' "${PWD##*/}"
 }
 
