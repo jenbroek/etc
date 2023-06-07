@@ -15,6 +15,8 @@ let g:c_syntax_for_h = 1
 let g:undotree_SetFocusWhenToggle = 1
 let g:matchup_matchparen_offscreen = { 'method': 'popup' }
 
+let g:mkdp_auto_close = 0
+
 call plug#begin()
 
 Plug 'tpope/vim-vinegar'
