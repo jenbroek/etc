@@ -36,6 +36,7 @@ colors() {
 }
 
 alias g=git
+alias k=kubectl
 
 alias tree='tree -CF --dirsfirst'
 alias grep='grep --color'

@@ -5,6 +5,7 @@
 . "$HOMEBREW_PREFIX/etc/bash_completion.d/git-completion.bash"
 
 __git_complete g __git_main
+complete -o default -F __start_kubectl k
 
 _PS1() {
 	local e=$? jobcmd cwd branch stage context
