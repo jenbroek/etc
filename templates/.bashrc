@@ -31,7 +31,10 @@ _PS1() {
 	fi
 
 	context=$(kubectl config current-context 2> /dev/null)
-	test -n "$context" && context="\[\033[38;5;8m\]$context\[\033[m\]"
+	case $context in
+		colima|'') unset context ;;
+		*) context="\[\033[38;5;8m\]$context\[\033[m\]"
+	esac
 
 	PS1=$(set -o noglob; printf '%s ' $jobcmd$cwd $branch $stage $context $'\n→')
 	printf '\033]0;%s\007' "${PWD##*/}"

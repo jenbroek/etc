@@ -20,7 +20,10 @@ _PS1() {
 	fi
 
 	context=$(kubectl config current-context 2> /dev/null)
-	test -n "$context" && context="\[\033[38;5;8m\]$context\[\033[m\]"
+	case $context in
+		colima|'') unset context ;;
+		*) context="\[\033[38;5;8m\]$context\[\033[m\]"
+	esac
 
 	set -o noglob
 	printf '%s ' $cwd $branch $stage $context '
