@@ -13,7 +13,7 @@ for f in "$@"; do
 	value_files="${value_files+$value_files }-f $f"
 done
 
-find templates -type f | while read -r p; do
+git ls-files -co --exclude-standard templates | while read -r p; do
 	f=$target_dir/${p#*/}
 	mkdir -p "${f%/*}"
 	templa $value_files "$p" > "$f"
