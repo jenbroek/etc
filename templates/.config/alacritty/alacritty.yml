@@ -141,7 +141,7 @@ schemes:
       cyan: '0x97b7d0'
       white: '0xcfc6cf'
 
-colors: *seawall
+colors: *leather
 
 selection:
   save_to_clipboard: true
