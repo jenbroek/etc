@@ -30,6 +30,7 @@
 	ad = add
 	ada = add -A
 	cm = commit
+	cme = !git commit -m "$(git rev-parse --abbrev-ref HEAD): " -e
 	cma = commit --amend
 	tg = tag
 	lg = log
