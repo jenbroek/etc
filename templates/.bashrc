@@ -1,6 +1,7 @@
 . ~/.shrc
 
-. ~/.asdf/plugins/java/set-java-home.bash
+eval "$(rtx activate bash)"
+
 . "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
 . "$HOMEBREW_PREFIX/etc/bash_completion.d/git-completion.bash"
 
