@@ -19,16 +19,16 @@ _PS1() {
 		esac
 	fi
 
-	context=$(kubectl config current-context 2> /dev/null)
+	context=$(grep -Po 'current-context: \K.*' ~/.kube/config)
 	case $context in
-		colima|'') unset context ;;
+		colima|rancher-desktop|'') unset context ;;
 		*) context="\[\033[38;5;8m\]$context\[\033[m\]"
 	esac
 
 	set -o noglob
+	printf '\[\033]0;\w\007\]'
 	printf '%s ' $cwd $branch $stage $context '
 →'
-	printf '\033]0;%s\007' "${PWD##*/}"
 }
 
 colors() {
