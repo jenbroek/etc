@@ -2,8 +2,9 @@
 
 eval "$(mise activate bash)"
 
-. "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
-. "$HOMEBREW_PREFIX/etc/bash_completion.d/git-completion.bash"
+. /etc/profile.d/bash_completion.sh
+. /usr/share/bash-completion/completions/git
+. /usr/share/bash-completion/completions/kubectl
 
 __git_complete g __git_main
 complete -o default -F __start_kubectl k
