@@ -2,7 +2,7 @@
 import = [ "schemes/orangetree.toml" ]
 
 [window]
-dimensions = { columns = 120, lines = 30 }
+dimensions = { columns = 113, lines = 25 }
 padding = { x = 20, y = 20 }
 
 [scrolling]
@@ -11,7 +11,7 @@ history = 100000
 [font]
 normal = { family = "CaskaydiaCove Nerd Font", style = "SemiBold" }
 italic = { family = "CaskaydiaCove Nerd Font", style = "SemiBold Italic" }
-size = 14.0
+size = 9.5
 offset.y = 2
 glyph_offset.y = 1
 
@@ -21,8 +21,10 @@ draw_bold_text_with_bright_colors = true
 [selection]
 save_to_clipboard = true
 
+[terminal]
+shell = "wsl.exe"
+
 [keyboard]
 bindings = [
-	{ key = "T",      mods = "Command", action = "CreateNewWindow" },
-	{ key = "Return", mods = "Command", action = "ToggleFullscreen" },
+	{ key = "T", mods = "Control", action = "CreateNewWindow" }
 ]
