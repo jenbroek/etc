@@ -9,8 +9,12 @@ __git_complete g __git_main
 complete -o default -F __start_kubectl k
 
 _PS1_bash() {
+	local e=$? jobcmd
+
 	jobcmd='\[$(test \j -gt 0 && printf "(\j) ")\]'
-	PS1="$jobcmd$(_PS1)"
+	PS1="$jobcmd$(_PS1 $e)"
+
+	return $e
 }
 
 unset PS1
