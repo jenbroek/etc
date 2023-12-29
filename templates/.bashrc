@@ -16,6 +16,7 @@ _PS1_bash() {
 unset PS1
 PROMPT_COMMAND="_PS1_bash;$PROMPT_COMMAND"
 PROMPT_DIRTRIM=2
+HISTCONTROL=ignoreboth:erasedups
 
 set +o histexpand
 
