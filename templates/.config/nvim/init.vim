@@ -1,21 +1,12 @@
-let s:plug_path = stdpath('data') . '/site/autoload/plug.vim'
-if empty(glob(s:plug_path))
-	silent execute '!curl -fLo ' . s:plug_path .
-		\ ' --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+let s:p = stdpath('data') . '/site/autoload/plug.vim'
+if empty(glob(s:p))
+	call system(['curl', '-fLo', s:p, '--create-dirs',
+	            \'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'])
 	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-	\ | PlugInstall --sync | source $MYVIMRC | endif
-
-let g:mapleader = ' '
-let g:is_posix = 1
-let g:c_syntax_for_h = 1
-
-let g:undotree_SetFocusWhenToggle = 1
-let g:matchup_matchparen_offscreen = { 'method': 'popup' }
-
-let g:mkdp_auto_close = 0
+	\| PlugInstall --sync | source $MYVIMRC | endif
 
 call plug#begin()
 
@@ -23,15 +14,13 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
-Plug 'sheerun/vim-polyglot'
 Plug 'mbbill/undotree'
-Plug 'editorconfig/editorconfig-vim'
 Plug 'andymass/vim-matchup'
 
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug'] }
+Plug 'iamcco/markdown-preview.nvim', {'do': {-> mkdp#util#install()}, 'for': 'markdown'}
 Plug 'godlygeek/tabular'
 
-Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 
 call plug#end()
@@ -45,11 +34,10 @@ set breakindent
 set linebreak
 set scrolloff=5
 set sidescroll=5
-set smartindent
 set list
 set listchars=tab:│\ ,trail:·,nbsp:␣,extends:…,precedes:…
 set fillchars=fold:\ ,eob:\ 
-set shortmess+=mrcSA
+set shortmess+=mrcA
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 set foldlevelstart=99
@@ -61,22 +49,18 @@ set ignorecase
 set smartcase
 set mouse=
 
+let g:mapleader = ' '
+let g:c_syntax_for_h = 1
+let g:undotree_SetFocusWhenToggle = 1
+let g:matchup_matchparen_offscreen = {'method': 'popup'}
+let g:mkdp_auto_close = 0
+
 lua << EOF
-require('nvim-treesitter.configs').setup {
-	ensure_installed = {
-		"bash",
-		"dockerfile",
-		"markdown",
-		"markdown_inline"
-	},
-	highlight = {
-		enable = true,
-		disable = { "latex", "markdown" }
-	},
-	indent = {
-		enable = true
-	}
-}
+require('nvim-treesitter.configs').setup({
+	highlight = { enable = true },
+	indent    = { enable = true },
+	matchup   = { enable = true }
+})
 EOF
 
 command! StripWhitespace %s/\s\+$//e | nohlsearch
