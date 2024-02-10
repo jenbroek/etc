@@ -14,8 +14,10 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
-Plug 'mbbill/undotree'
 Plug 'andymass/vim-matchup'
+
+Plug 'mbbill/undotree'
+Plug 'stevearc/aerial.nvim'
 
 Plug 'iamcco/markdown-preview.nvim', {'do': {-> mkdp#util#install()}}
 Plug 'godlygeek/tabular'
@@ -61,6 +63,9 @@ require('nvim-treesitter.configs').setup({
 	indent    = { enable = true },
 	matchup   = { enable = true }
 })
+require('aerial').setup({
+	keymaps = { ['<CR>'] = 'actions.scroll' }
+})
 EOF
 
 command! StripWhitespace %s/\s\+$//e | nohlsearch
@@ -87,3 +92,4 @@ vnoremap < <gv
 vnoremap > >gv
 
 nnoremap U <Cmd>UndotreeToggle<CR>
+nnoremap T <Cmd>AerialToggle<CR>
