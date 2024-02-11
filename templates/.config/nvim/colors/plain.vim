@@ -1,73 +1,81 @@
+hi clear
 if exists('syntax_on')
 	syntax reset
 endif
 
+function! s:hi(grp, args)
+	call map(a:args, '"cterm" .. v:key .. "=" .. v:val')
+	execute 'hi clear ' .. a:grp
+	execute 'hi ' .. a:grp .. ' ' .. join(values(a:args))
+endfunction
+
 let g:colors_name = 'plain'
 
-hi SpecialKey ctermfg=0
-hi! link NonText SpecialKey
-hi! link EndOfBuffer SpecialKey
+call s:hi('Visual', #{bg:8, fg:7})
+hi! link MatchParen Visual
 
-hi ErrorMsg ctermbg=none ctermfg=1 cterm=bold
-hi WarningMsg ctermfg=3
+hi! link SpecialKey Normal
+call s:hi('Ignore', #{fg:0})
+hi! link NonText Ignore
 
-hi clear MoreMsg
-hi clear ModeMsg
-hi clear Question
-hi clear Directory
+hi clear Conceal
+hi! link SignColumn Conceal
 
-hi Search ctermbg=0 ctermfg=7 cterm=bold,reverse
-hi IncSearch ctermbg=3 ctermfg=0 cterm=none
+call s:hi('Search', #{bg:15, fg:8})
+call s:hi('CurSearch', #{bg:7, fg:0})
 
-hi LineNr ctermfg=0
-hi CursorLineNr ctermfg=7 ctermbg=0 cterm=bold
-
-hi ColorColumn ctermbg=0
+call s:hi('ColorColumn', #{bg:234})
 hi! link CursorColumn ColorColumn
 hi! link CursorLine ColorColumn
 
-hi Visual ctermbg=0 ctermfg=7 cterm=bold,reverse
+call s:hi('LineNr', #{fg:8})
+hi! link CursorLineNr ColorColumn
 
-hi VertSplit cterm=none
+hi clear StatusLine
+hi clear StatusLineNC
 
-" Different guibgs are needed to trick vim into hiding fillchars.
-" See: https://vi.stackexchange.com/a/15894
-hi StatusLine cterm=underline guibg=red
-hi StatusLineNC cterm=underline guibg=green
+call s:hi('TabLine', #{fg:4})
+hi clear TabLineSel
 
-hi clear Title
-hi TabLine ctermbg=none ctermfg=0 cterm=underline
-hi TabLineSel cterm=underline
-hi! link TabLineFill TabLine
+call s:hi('Pmenu', #{bg:15, fg:0})
+call s:hi('PmenuSel', #{bg:0, fg:15})
+call s:hi('PmenuSBar', #{bg:7})
+call s:hi('PmenuThumb', #{bg:8})
 
-hi MatchParen ctermbg=0
+" Color1: Identifier
+" Color2d: Constant
+" Colar2l: Special, PreProc
+" Color3: Function, Qualifier
+" Dim (light): Type, Brackets
+" Dim (dark): Delimiter, Comment
+" Clear: Statement, Operator
 
-hi clear Folded
-hi clear FoldColumn
+call s:hi('Identifier', #{fg:1})
+hi! link @variable Identifier
 
-hi Pmenu ctermbg=0 ctermfg=7
-hi PmenuSel ctermbg=7 ctermfg=0
-hi PmenuSBar ctermfg=0 cterm=bold,reverse
-hi PmenuThumb ctermfg=7 cterm=reverse
+call s:hi('Constant', #{fg:10})
+hi! link @string @constant
 
-hi! link WildMenu PmenuSel
+call s:hi('Special', #{fg:14})
+hi! link PreProc Special
+hi! link @constant.macro PreProc
+hi! link @function.macro PreProc
+hi! link @keyword.directive PreProc
+hi! link @keyword.directive.define PreProc
 
-hi DiffAdd ctermbg=2 ctermfg=0
-hi DiffChange ctermbg=3 ctermfg=0
-hi DiffDelete ctermbg=1 ctermfg=1 cterm=none
-hi DiffText ctermfg=3 ctermbg=0 cterm=bold,reverse
+call s:hi('Function', #{fg:13})
+hi! link @constructor @function
+hi! link @type.qualifier Function
 
-hi clear SignColumn
-hi clear Conceal
+call s:hi('Type', #{fg:15})
+hi! link @punctuation.bracket Type
 
-hi Comment ctermfg=0 cterm=bold
-hi Constant ctermfg=2 cterm=bold
-hi Identifier ctermfg=5 cterm=bold
+call s:hi('Delimiter', #{fg:8})
+
+call s:hi('Comment', #{fg:8})
+call s:hi('Todo', #{bg:8, fg:7})
+call s:hi('DiagnosticWarn', #{bg:8, fg:9})
+call s:hi('DiagnosticError', #{bg:8, fg:11})
+
 hi clear Statement
-hi PreProc ctermfg=5 cterm=bold
-hi Type ctermfg=3 cterm=bold
-hi clear Special
-hi Underlined ctermfg=none
-hi! link Ignore NonText
-hi Error ctermbg=1 ctermfg=none
-hi Todo ctermbg=4 ctermfg=7
+hi! link Operator Statement
