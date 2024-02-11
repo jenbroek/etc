@@ -13,7 +13,7 @@ call plug#begin()
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-commentary'
+Plug 'echasnovski/mini.comment'
 Plug 'andymass/vim-matchup'
 
 Plug 'mbbill/undotree'
@@ -23,7 +23,6 @@ Plug 'iamcco/markdown-preview.nvim', {'do': {-> mkdp#util#install()}}
 Plug 'godlygeek/tabular'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 
 call plug#end()
 
@@ -66,6 +65,7 @@ require('nvim-treesitter.configs').setup({
 require('aerial').setup({
 	keymaps = { ['<CR>'] = 'actions.scroll' }
 })
+require('mini.comment').setup()
 EOF
 
 command! StripWhitespace %s/\s\+$//e | nohlsearch
