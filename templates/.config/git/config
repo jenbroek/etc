@@ -35,6 +35,7 @@
 	tg = tag
 	lg = log
 	lgp = log -p
+	lgs = log --stat
 	lgo = !git log "origin/$(git rev-parse --abbrev-ref HEAD).."
 	ft = fetch
 	pl = pull
