@@ -17,7 +17,7 @@ Plug 'tpope/vim-commentary'
 Plug 'mbbill/undotree'
 Plug 'andymass/vim-matchup'
 
-Plug 'iamcco/markdown-preview.nvim', {'do': {-> mkdp#util#install()}, 'for': 'markdown'}
+Plug 'iamcco/markdown-preview.nvim', {'do': {-> mkdp#util#install()}}
 Plug 'godlygeek/tabular'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
