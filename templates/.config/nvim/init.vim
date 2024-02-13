@@ -15,6 +15,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'echasnovski/mini.comment'
 Plug 'andymass/vim-matchup'
+Plug 'tiagovla/scope.nvim'
 
 Plug 'mbbill/undotree'
 Plug 'stevearc/aerial.nvim'
@@ -66,6 +67,7 @@ require('aerial').setup({
 	keymaps = { ['<CR>'] = 'actions.scroll' }
 })
 require('mini.comment').setup()
+require('scope').setup()
 EOF
 
 command! StripWhitespace %s/\s\+$//e | nohlsearch

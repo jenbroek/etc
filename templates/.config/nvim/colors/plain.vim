@@ -31,11 +31,11 @@ hi! link CursorLine ColorColumn
 call s:hi('LineNr', #{fg:8})
 hi! link CursorLineNr ColorColumn
 
-hi clear StatusLine
-hi clear StatusLineNC
-
 call s:hi('TabLine', #{fg:4})
 hi clear TabLineSel
+
+hi! link StatusLine TabLine
+hi clear StatusLineNC
 
 call s:hi('Pmenu', #{bg:15, fg:0})
 call s:hi('PmenuSel', #{bg:0, fg:15})

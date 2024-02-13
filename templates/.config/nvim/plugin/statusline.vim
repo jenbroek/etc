@@ -1,2 +1,3 @@
-set statusline=%f%(\ %m%)\ %=\ Ln\ %l,\ Col\ %v
+set statusline=%!statusline#render()
 set laststatus=3
+set showtabline=0
