@@ -48,12 +48,11 @@ alias grep='grep --color'
 alias diff='diff -u --color'
 alias diffc='diff --color=always'
 alias lessr='less -R'
-alias cat='cat -v'
 
 alias ls='ls -F --color --group-directories-first'
 alias la='ls -A'
 alias ll='ls -hl'
-alias lla='ls -Ahl'
+alias lla='ll -A'
 
 alias cp='cp -i'
 alias mv='mv -i'
