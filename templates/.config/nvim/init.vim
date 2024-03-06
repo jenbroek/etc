@@ -93,5 +93,7 @@ vnoremap p pgvy
 vnoremap < <gv
 vnoremap > >gv
 
+tnoremap <ESC> <C-\><C-n>
+
 nnoremap U <Cmd>UndotreeToggle<CR>
 nnoremap T <Cmd>AerialToggle<CR>
