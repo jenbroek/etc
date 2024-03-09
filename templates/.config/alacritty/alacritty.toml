@@ -1,4 +1,4 @@
-import = [ "~/.config/alacritty/schemes/cdrom.toml" ]
+import = [ "~/.config/alacritty/schemes/orangetree.toml" ]
 
 [window]
 dimensions = { columns = 120, lines = 30 }
