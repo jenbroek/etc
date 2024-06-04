@@ -79,3 +79,4 @@ call s:hi('DiagnosticError', #{bg:8, fg:11})
 
 hi clear Statement
 hi! link Operator Statement
+hi! link Label Special
