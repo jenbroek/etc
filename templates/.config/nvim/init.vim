@@ -49,6 +49,7 @@ set shiftwidth=0
 set ignorecase
 set smartcase
 set mouse=
+set grepprg=rg\ --vimgrep\ -.\ -g!.git
 
 let g:mapleader = ' '
 let g:c_syntax_for_h = 1
@@ -72,6 +73,9 @@ command! StripWhitespace %s/\s\+$//e | nohlsearch
 
 nnoremap <Tab>   <Cmd>bnext<CR>
 nnoremap <S-Tab> <Cmd>bprevious<CR>
+
+nnoremap ]q <Cmd>cnext<CR>
+nnoremap [q <Cmd>cprev<CR>
 
 nnoremap <S-Left>  g^
 nnoremap <S-Right> g$
