@@ -56,6 +56,8 @@ alias ls='ls -F --color --group-directories-first'
 alias la='ls -A'
 alias ll='ls -hl'
 alias lla='ll -A'
+alias l1='ls -1'
+alias la1='la -1'
 
 alias cp='cp -i'
 alias mv='mv -i'
