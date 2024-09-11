@@ -63,6 +63,8 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
 
+alias snvim='nvim +"set nobackup noundofile noswapfile shada="'
+
 PS1='$(_PS1)'
 
 export EDITOR=nvim
