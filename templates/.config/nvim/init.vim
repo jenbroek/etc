@@ -36,7 +36,7 @@ set linebreak
 set scrolloff=5
 set sidescroll=5
 set list
-set listchars=tab:│\ ,trail:·,nbsp:␣,extends:…,precedes:…
+set listchars=tab:│\ ,trail:·,lead:·,nbsp:␣,extends:…,precedes:…
 set fillchars=fold:\ ,eob:\ 
 set shortmess+=mrcA
 set foldmethod=expr
