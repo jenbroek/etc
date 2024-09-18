@@ -64,6 +64,7 @@ alias mv='mv -i'
 alias rm='rm -i'
 
 alias snvim='nvim +"set nobackup noundofile noswapfile shada="'
+alias rgg='rg -. -g!.git'
 
 PS1='$(_PS1)'
 
