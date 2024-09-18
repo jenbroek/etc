@@ -50,6 +50,8 @@ set ignorecase
 set smartcase
 set mouse=
 set grepprg=rg\ --vimgrep\ -.\ -g!.git
+set splitright
+set splitbelow
 
 let g:mapleader = ' '
 let g:c_syntax_for_h = 1
