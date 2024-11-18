@@ -1,5 +1,5 @@
 [core]
-	fileMode = false
+	filemode = false
 	autocrlf = false
 [init]
 	defaultBranch = main
