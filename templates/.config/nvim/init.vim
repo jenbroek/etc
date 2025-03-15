@@ -16,6 +16,8 @@ Plug 'tpope/vim-repeat'
 Plug 'andymass/vim-matchup'
 Plug 'tiagovla/scope.nvim'
 
+Plug 'lewis6991/gitsigns.nvim'
+
 Plug 'mbbill/undotree'
 Plug 'stevearc/aerial.nvim'
 
@@ -69,6 +71,7 @@ require('aerial').setup({
 	keymaps = { ['<CR>'] = 'actions.scroll' }
 })
 require('scope').setup()
+require('gitsigns').setup()
 EOF
 
 command! StripWhitespace %s/\s\+$//e | nohlsearch
@@ -78,6 +81,9 @@ nnoremap <S-Tab> <Cmd>bprevious<CR>
 
 nnoremap ]q <Cmd>cnext<CR>
 nnoremap [q <Cmd>cprev<CR>
+
+nnoremap ]h <Cmd>Gitsigns next_hunk<CR>
+nnoremap [h <Cmd>Gitsigns prev_hunk<CR>
 
 nnoremap <S-Left>  g^
 nnoremap <S-Right> g$
@@ -101,3 +107,4 @@ tnoremap <ESC> <C-\><C-n>
 
 nnoremap U <Cmd>UndotreeToggle<CR>
 nnoremap T <Cmd>AerialToggle<CR>
+nnoremap L <Cmd>Gitsigns blame_line<CR>
