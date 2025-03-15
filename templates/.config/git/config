@@ -29,6 +29,7 @@
 	dfo = !git diff "origin/$(git rev-parse --abbrev-ref HEAD)"
 	ad = add
 	ada = add -A
+	adp = add -p
 	cm = commit
 	cme = !git commit -m "$(git rev-parse --abbrev-ref HEAD): " -e
 	cma = commit --amend
@@ -44,9 +45,12 @@
 	rb = rebase
 	rbi = rebase -i
 	rbc = rebase --continue
+	chr = cherry-pick
+	chrc = cherry-pick --continue
 	ch = checkout
 	br = branch
 	rs = reset
+	rsp = reset -p
 	rso = !git reset --hard "origin/$(git rev-parse --abbrev-ref HEAD)"
 	rt = restore
 	sh = stash
