@@ -71,6 +71,11 @@ require('aerial').setup({
 	keymaps = { ['<CR>'] = 'actions.scroll' }
 })
 require('scope').setup()
+vim.filetype.add({
+	pattern = {
+		['.*%.gotmpl%..*'] = 'gotmpl'
+	}
+})
 require('gitsigns').setup()
 EOF
 
