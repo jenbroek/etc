@@ -27,6 +27,7 @@
 	df = diff
 	dfc = diff --cached
 	dfo = !git diff "origin/$(git rev-parse --abbrev-ref HEAD)"
+	rdo = !git range-diff --right-only origin/"${1:-HEAD}" "origin/$(git rev-parse --abbrev-ref HEAD)" "$(git rev-parse --abbrev-ref HEAD)"
 	ad = add
 	ada = add -A
 	adp = add -p
