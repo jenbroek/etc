@@ -45,8 +45,8 @@
 	rb = rebase
 	rbi = rebase -i
 	rbc = rebase --continue
-	chr = cherry-pick
-	chrc = cherry-pick --continue
+	cr = cherry-pick
+	crc = cherry-pick --continue
 	ch = checkout
 	br = branch
 	rs = reset
