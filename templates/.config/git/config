@@ -54,8 +54,6 @@
 	rso = !git reset --hard "origin/$(git rev-parse --abbrev-ref HEAD)"
 	rt = restore
 	sh = stash
-	shu = stash -u
-	shp = stash push
 	shl = stash list
 	sha = stash apply
 	shd = stash drop
