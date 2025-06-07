@@ -73,7 +73,8 @@ require('aerial').setup({
 require('scope').setup()
 vim.filetype.add({
 	pattern = {
-		['.*%.gotmpl%..*'] = 'gotmpl'
+		['.*%.gotmpl%..*'] = 'gotmpl',
+		['layouts/.*%.html'] = 'gotmpl'
 	}
 })
 require('gitsigns').setup()
