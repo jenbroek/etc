@@ -9,7 +9,8 @@ padding = { x = 20, y = 20 }
 history = 100000
 
 [font]
-normal = { family = "Cascadia Code PL", style = "SemiBold" }
+normal = { family = "CaskaydiaCove Nerd Font", style = "SemiBold" }
+italic = { family = "CaskaydiaCove Nerd Font", style = "SemiBold Italic" }
 size = 14.0
 offset.y = 2
 glyph_offset.y = 1
