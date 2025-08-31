@@ -47,6 +47,14 @@ colors() {
 	done
 }
 
+wslmount() {
+	sudo mount -t drvfs "${1:?drive letter missing}:" "/mnt/$1" -o umask=0022,uid=$(id -un),gid=$(id -un)
+}
+
+wslumount() {
+	sudo umount "/mnt/${1:?drive letter missing}"
+}
+
 alias g=git
 alias k=kubectl
 alias a=acloud
