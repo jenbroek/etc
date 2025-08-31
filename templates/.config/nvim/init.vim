@@ -15,6 +15,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'andymass/vim-matchup'
 Plug 'tiagovla/scope.nvim'
+Plug 'chaoren/vim-wordmotion'
 
 Plug 'lewis6991/gitsigns.nvim'
 
