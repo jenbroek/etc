@@ -2,7 +2,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 coreutils=$(brew --prefix coreutils)/libexec/gnubin
 export GOPATH="$HOME/.go"
-export PATH="$HOME/bin:$HOME/.local/bin:$GOPATH/bin:$HOME/.dotnet/tools:$coreutils:$PATH"
+export PATH="/opt/homebrew/opt/libressl/bin:$HOME/bin:$HOME/.local/bin:$GOPATH/bin:$HOME/.dotnet/tools:$coreutils:$PATH"
 export MANPATH="$coreutils:$MANPATH"
 
 export GOROOT="$(brew --prefix go)/libexec"
