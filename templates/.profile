@@ -12,3 +12,5 @@ export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock
 export DOCKER_HOST="unix://$HOME/.colima/default/docker.sock"
 
 export ENV="$HOME/.shrc"
+
+export LANG=en_GB.UTF-8
