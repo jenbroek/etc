@@ -7,6 +7,7 @@ eval "$(mise activate bash)"
 
 __git_complete g __git_main
 complete -o default -F __start_kubectl k
+complete -o default -F _docker d
 
 _PS1_bash() {
 	local e=$? jobcmd
