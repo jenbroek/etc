@@ -62,6 +62,8 @@ let g:c_syntax_for_h = 1
 let g:undotree_SetFocusWhenToggle = 1
 let g:matchup_matchparen_offscreen = {'method': 'popup'}
 let g:mkdp_auto_close = 0
+let g:mkdp_theme = 'light'
+let g:mkdp_preview_options = {'uml': {'server': 'http://localhost:8888'}}
 
 lua << EOF
 require('nvim-treesitter.configs').setup({
