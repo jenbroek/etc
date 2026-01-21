@@ -32,7 +32,7 @@ call s:hi('LineNr', #{fg:8})
 hi! link CursorLineNr ColorColumn
 
 call s:hi('TabLine', #{fg:4})
-hi clear TabLineSel
+call s:hi('TabLineSel', #{fg:15})
 
 hi! link StatusLine TabLine
 hi clear StatusLineNC

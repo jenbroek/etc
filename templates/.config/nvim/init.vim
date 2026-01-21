@@ -31,6 +31,7 @@ call plug#end()
 
 colorscheme plain
 
+set notermguicolors
 set nomodeline
 set lazyredraw
 set updatetime=100
