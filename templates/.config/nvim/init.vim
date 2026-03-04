@@ -44,8 +44,9 @@ set listchars=tab:│\ ,trail:·,lead:·,nbsp:␣,extends:…,precedes:…
 set fillchars=fold:\ ,eob:\ 
 set shortmess+=mrcA
 set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
+set foldexpr=v:lua.vim.treesitter.foldexpr()
 set foldlevelstart=99
+set indentexpr=v:lua.require'nvim-treesitter'.indentexpr()
 set undofile
 set conceallevel=2
 set tabstop=4
@@ -66,22 +67,23 @@ let g:mkdp_theme = 'light'
 let g:mkdp_preview_options = {'uml': {'server': 'http://localhost:8888'}}
 
 lua << EOF
-require('nvim-treesitter.configs').setup({
-	highlight = { enable = true },
-	indent    = { enable = true },
-	matchup   = { enable = true }
+vim.api.nvim_create_autocmd('FileType', {
+	pattern = { '*' },
+	callback = function() vim.treesitter.start() end
 })
+
 require('aerial').setup({
 	keymaps = { ['<CR>'] = 'actions.scroll' }
 })
 require('scope').setup()
+require('gitsigns').setup()
+
 vim.filetype.add({
 	pattern = {
 		['.*%.gotmpl%..*'] = 'gotmpl',
 		['layouts/.*%.html'] = 'gotmpl'
 	}
 })
-require('gitsigns').setup()
 EOF
 
 command! StripWhitespace %s/\s\+$//e | nohlsearch
