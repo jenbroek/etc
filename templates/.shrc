@@ -19,10 +19,10 @@ _PS1() {
 		esac
 	fi
 
-	context=$(grep -Po 'current-context: \K.*' ~/.kube/config 2> /dev/null)
+	context=$(kubectl config current-context 2> /dev/null)
 	case $context in
-		colima|rancher-desktop|'""'|'') unset context ;;
-		*) context="\[\033[38;5;8m\]$context\[\033[m\]"
+		colima|rancher-desktop|'') unset context ;;
+		*) context="\[\033[38;5;3m\]@$context\[\033[m\]"
 	esac
 
 	set -o noglob
