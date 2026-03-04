@@ -45,6 +45,7 @@ colors() {
 
 alias g=git
 alias k=kubectl
+alias a=acloud
 alias d=docker
 
 alias tree='tree -CF --dirsfirst'
