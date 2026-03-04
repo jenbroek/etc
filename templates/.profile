@@ -1,12 +1,12 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-coreutils=$(brew --prefix coreutils)/libexec/gnubin
-export GOPATH="$HOME/.go"
-export PATH="/opt/homebrew/opt/libressl/bin:$HOME/bin:$HOME/.local/bin:$GOPATH/bin:$HOME/.dotnet/tools:$coreutils:$PATH"
-export MANPATH="$coreutils:$MANPATH"
+libressl=$(brew --prefix libressl)
+coreutils=$(brew --prefix coreutils)/libexec
+grep=$(brew --prefix grep)/libexec
 
-export GOROOT="$(brew --prefix go)/libexec"
-export DOTNET_ROOT="$(brew --prefix dotnet)/libexec"
+export GOPATH="$HOME/.go"
+export PATH="$libressl/bin:$HOME/bin:$HOME/.local/bin:$GOPATH/bin:$coreutils/gnubin:$grep/gnubin:$PATH"
+export MANPATH="$coreutils/gnuman:$grep/gnuman:$MANPATH"
 
 export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock
 export DOCKER_HOST="unix://$HOME/.colima/default/docker.sock"
