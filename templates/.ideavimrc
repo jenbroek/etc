@@ -3,6 +3,7 @@ set idearefactormode=visual
 set surround
 set commentary
 set matchit
+set anyobject
 
 set scrolloff=5
 set sidescroll=5
