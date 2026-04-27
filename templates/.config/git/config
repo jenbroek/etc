@@ -54,6 +54,7 @@
 	rsp = reset -p
 	rso = !git reset --hard "origin/$(git rev-parse --abbrev-ref HEAD)"
 	rt = restore
+	rtp = restore --patch
 	sh = stash
 	shl = stash list
 	sha = stash apply
