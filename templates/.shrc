@@ -45,6 +45,7 @@ colors() {
 
 alias g=git
 alias k=kubectl
+alias k9='k9s --readonly'
 alias a=acloud
 alias d=docker
 
