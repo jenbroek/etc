@@ -35,19 +35,25 @@ xnoremap <Down>    gj
 xnoremap <S-Up>    k
 xnoremap <S-Down>  j
 
+nmap ]h <Action>(VcsShowNextChangeMarker)
+nmap [h <Action>(VcsShowPrevChangeMarker)
+
 vnoremap p pgvy
 vnoremap < <gv
 vnoremap > >gv
 
-nmap U <Action>(LocalHistory.ShowHistory)
-xmap U <Action>(LocalHistory.ShowSelectionHistory)
+nmap U <Action>(Vcs.ShowTabbedFileHistory)
+xmap U <Action>(Vcs.ShowHistoryForBlock)
+nmap <Leader>U <Action>(LocalHistory.ShowHistory)
+xmap <Leader>U <Action>(LocalHistory.ShowSelectionHistory)
 nmap T <Action>(FileStructurePopup)
+nmap L <Action>(Show.Current.Revision)
 nmap K <Action>(ShowHoverInfo)
 
-nmap [g <Action>(GotoPreviousError)
-nmap ]g <Action>(GotoNextError)
+nmap ]e <Action>(GotoNextError)
+nmap [e <Action>(GotoPreviousError)
 nmap gd <Action>(GotoDeclaration)
-nmap gy <Action>(GotoTypeDeclaration)
+nmap gy <Action>(GotoSuperMethod)
 nmap gi <Action>(GotoImplementation)
 nmap gt <Action>(GotoTest)
 
