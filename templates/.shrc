@@ -69,6 +69,7 @@ alias rm='rm -i'
 alias snvim='nvim +"set nobackup noundofile noswapfile shada="'
 alias rgg='rg -. -g!.git'
 alias xo='xargs -o'
+alias ffind='find . -type d -name node_modules -prune -o'
 
 PS1='$(_PS1)'
 
