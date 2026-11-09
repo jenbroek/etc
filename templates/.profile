@@ -16,4 +16,7 @@ export DOCKER_HOST="unix://$HOME/.colima/default/docker.sock"
 
 export ENV="$HOME/.shrc"
 
+export SSH_SK_PROVIDER="$(brew --prefix openssh-sk-provider)/lib/sk-libfido2.dylib"
+launchctl setenv SSH_SK_PROVIDER "$SSH_SK_PROVIDER"
+
 export LANG=en_GB.UTF-8
