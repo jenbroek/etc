@@ -6,7 +6,7 @@
 __git_complete g __git_main
 complete -o default -F __start_kubectl k
 complete -o default -F __start_k9s k9
-complete -o default -F __start_acloud a
+complete -o default -F __start_acloud ac
 complete -o default -F __start_docker d
 
 _PS1_bash() {
