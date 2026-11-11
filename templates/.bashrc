@@ -22,7 +22,7 @@ unset PS1
 PROMPT_COMMAND="_PS1_bash;$PROMPT_COMMAND"
 PROMPT_DIRTRIM=2
 
-trap '. ~/.bash_logout' SIGHUP
+trap '. ~/.bash_logout' EXIT
 HISTCONTROL=ignoreboth:erasedups
 
 set +o histexpand
