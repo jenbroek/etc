@@ -1,6 +1,4 @@
-allprojects {
-	repositories {
-		mavenLocal()
+{{ define "repositories" -}}
 		{{- if and .gradle .gradle.repositories }}
 		{{- range .gradle.repositories }}
 		if (layout.projectDirectory.toString() ==~ {{ .workdir }})
@@ -26,6 +24,19 @@ allprojects {
 			}
 		{{- end }}
 		{{- end }}
+{{- end -}}
+
+allprojects {
+	repositories {
+		mavenLocal()
+		{{- template "repositories" . }}
 		mavenCentral()
+	}
+}
+
+beforeSettings { settings ->
+	settings.pluginManagement.repositories {
+		{{- template "repositories" . }}
+		gradlePluginPortal()
 	}
 }
