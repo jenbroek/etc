@@ -3,6 +3,9 @@
 	autocrlf = false
 [init]
 	defaultBranch = main
+[fetch]
+	prune = true
+	pruneTags = true
 [push]
 	default = current
 	autoSetupRemote = true
